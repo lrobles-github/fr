@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    {% if count == 0 %}
+        <h3>You have no friends  :'(</h3>
+    {% else %}
+        <h3>You have {{ count }} friends</h3>
+    {% endif%}
+    
+    <table>
+        {% for friend in friends %}
+        
+        <tr>
+            <td>{{ friend.friend.first_name }} {{ friend.friend.last_name }} </td>
+            <td><a href="">Delete</a></td>
+        </tr>
+
+        {% endfor %}
+    
+    </table>
+
+</body>
+</html>

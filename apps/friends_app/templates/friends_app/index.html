@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h5>
+        <a href="/friends_app/friends">View Friends...</a>
+        <a href="/friends_app/add_friend">Add Friend...</a>
+    </h5>
+
+    <h2>Recent Friends</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Added</th>
+        </tr>
+
+        <tr>
+        {% for friend in sorted_friends %}
+            <td>{{ sorted_friends.user.name }}</td>
+            <td>{{ sorted_friends.created_at|timesince }}</td>
+        {% endfor %}
+        </tr>
+
+    </table>
+</body>
+</html>
